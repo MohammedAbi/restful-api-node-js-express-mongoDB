@@ -105,3 +105,67 @@ This is a Node.js application using Express and Mongoose to create a RESTful API
     "image": "http://example.com/image.jpg"
   }
   ```
+
+#### Update a Product by ID
+
+- **URL:** `/products/:id`
+- **Method:** `PUT`
+- **URL Params:** `id=[string]`
+- **Data Params:**
+  ```json
+  {
+    "name": "Updated Product Name",
+    "quantity": 15,
+    "price": 150,
+    "image": "http://example.com/updated-image.jpg"
+  }
+  ```
+- **Success Response:**
+  - **Code:** 200
+  - **Content:**
+    ```json
+    {
+      "_id": "60c72b1f4f1a2c001c8d4d1e",
+      "name": "Updated Product Name",
+      "quantity": 15,
+      "price": 150,
+      "image": "http://example.com/updated-image.jpg",
+      "createdAt": "2021-06-14T10:33:51.831Z",
+      "updatedAt": "2021-06-14T10:35:51.831Z",
+      "__v": 0
+    }
+    ```
+
+#### Delete a Product by ID
+
+- **URL:** `/products/:id`
+- **Method:** `DELETE`
+- **URL Params:** `id=[string]`
+- **Data Params:**
+  ```json
+  {
+    "name": "Updated Product Name",
+    "quantity": 15,
+    "price": 150,
+    "image": "http://example.com/updated-image.jpg"
+  }
+  ```
+- **Success Response:**
+  - **Code:** 200
+  - **Content:**
+    ```json
+    {
+      "message": "Product with ID 60c72b1f4f1a2c001c8d4d1e has been deleted"
+    }
+    ```
+
+#### Error Handling
+
+Errors will be returned in the following format:
+
+````json
+   {
+      "message": "Error message"
+   }
+   ```
+````
