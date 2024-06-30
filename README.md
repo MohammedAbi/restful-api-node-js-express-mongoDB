@@ -22,8 +22,8 @@ This is a Node.js application using Express and Mongoose to create a RESTful API
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/product-inventory-api.git
-   cd product-inventory-api
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
    ```
 
 2. Install the dependencies:
@@ -34,7 +34,7 @@ This is a Node.js application using Express and Mongoose to create a RESTful API
 
 3. Create a `.env` file in the root of the project and add your MongoDB connection string:
    ```
-   MONGODB_URI=mongodb+srv://admin:Skuraane_24@databaseapi.d8y8c38.mongodb.net/?retryWrites=true&w=majority&appName=DatabaseAPI
+   MONGODB_URI=your_mongodb_connection_string
    ```
 
 ### Running the Application
@@ -104,6 +104,4 @@ This is a Node.js application using Express and Mongoose to create a RESTful API
     "price": 100,
     "image": "http://example.com/image.jpg"
   }
-  
   ```
-
