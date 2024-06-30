@@ -163,9 +163,8 @@ This is a Node.js application using Express and Mongoose to create a RESTful API
 
 Errors will be returned in the following format:
 
-````json
-   {
-      "message": "Error message"
-   }
-   ```
-````
+```json
+{
+  "message": "Error message"
+}
+```
