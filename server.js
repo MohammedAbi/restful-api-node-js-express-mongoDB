@@ -26,6 +26,13 @@ app.get("/products/:id", async (req, res) => {
   try {
     const { id } = req.params; // Extract the product ID from the request parameters
     const product = await Product.findById(id); // Use the Product model to fetch the product by ID from the database
+
+    if (!product) {
+      return res
+        .status(404)
+        .json({ message: `Cannot find any product with ID ${id}` }); // Respond with a 404 status if the product is not found
+    }
+
     res.status(200).json(product); // Respond with the fetched product in JSON format
   } catch (error) {
     res.status(500).json({ message: error.message }); // Handle any errors that occur during the fetch
@@ -94,9 +101,10 @@ mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB!"); // Log a success message once connected to the database
-    app.listen(3000, () => {
-      // Start the Express server on port 3000
-      console.log(`Node API app is running on port 3000`); // Log a message indicating that the server is running
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      // Start the Express server on the dynamic port
+      console.log(`Node API app is running on port ${PORT}`); // Log a message indicating that the server is running
     });
   })
   .catch((error) => {
