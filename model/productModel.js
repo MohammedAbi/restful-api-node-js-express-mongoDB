@@ -4,16 +4,16 @@ const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please enter a product name"], // 'required' instead of 'require'
+      required: [true, "Please enter a product name"],
     },
     quantity: {
       type: Number,
-      required: true, // 'required' instead of 'require'
+      required: true, 
       default: 0,
     },
     price: {
       type: Number,
-      required: true, // 'required' instead of 'require'
+      required: true,
     },
     image: {
       type: String,
